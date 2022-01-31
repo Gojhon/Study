@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+ 
+</head>
+<body>
+<script>
+    function min(...itmes)
+    {
+        let output = itmes[0]
+        for (const item of itmes)
+        {
+            if(output > item)
+            {
+                output = item
+            }
+        }
+        return output
+    }
+
+    console.log('min(52,273,32,103,275,24,57)')
+    console.log(`=${min(52,273,32,103,275,24,57)}`)
+
+</script>    
+</body>
+</html>
