@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+<script>
+    const test = {
+        a: function(){
+            console.log(this)
+        },
+        b: () =>
+        {
+            console.log(this)
+        }
+    }
+    test.a()
+    test.b()
+</script>    
+</body>
+</html>
