@@ -22,7 +22,7 @@
                 alert('할 일을 입력해주세요')
                 return
             }
-        }
+        
 
         const item = document.createElement('div')
         const checkbox = document.createElement('input')
@@ -51,9 +51,9 @@
         })
 
         input.value = ''
-
+    }
         const removeTodo = (key) => {
-            const item = document.querySelector(`[data-key"${key}"]`)
+            const item = document.querySelector(`[data-key="${key}"]`)
             todoList.removeChild(item)
         }
 
