@@ -27,7 +27,7 @@ const DiaryEditor = () =>
         if(state.author.length<1)
         {
             authorInput.current.focus();
-            retrun ;
+            return ;
         }
         if(state.content.length<5)
         {
