@@ -1,0 +1,31 @@
+C:\Users\DongMin\Desktop\DM Interactive\Programming\WPF_C#\Mvvm Example\Mvvm Example\bin\Debug\Mvvm Example.exe.config
+C:\Users\DongMin\Desktop\DM Interactive\Programming\WPF_C#\Mvvm Example\Mvvm Example\bin\Debug\Mvvm Example.exe
+C:\Users\DongMin\Desktop\DM Interactive\Programming\WPF_C#\Mvvm Example\Mvvm Example\bin\Debug\Mvvm Example.pdb
+C:\Users\DongMin\Desktop\DM Interactive\Programming\WPF_C#\Mvvm Example\Mvvm Example\obj\Debug\MainWindow.g.cs
+C:\Users\DongMin\Desktop\DM Interactive\Programming\WPF_C#\Mvvm Example\Mvvm Example\obj\Debug\App.g.cs
+C:\Users\DongMin\Desktop\DM Interactive\Programming\WPF_C#\Mvvm Example\Mvvm Example\obj\Debug\Mvvm Example_MarkupCompile.cache
+C:\Users\DongMin\Desktop\DM Interactive\Programming\WPF_C#\Mvvm Example\Mvvm Example\obj\Debug\Mvvm Example_MarkupCompile.lref
+C:\Users\DongMin\Desktop\DM Interactive\Programming\WPF_C#\Mvvm Example\Mvvm Example\obj\Debug\MainWindow.baml
+C:\Users\DongMin\Desktop\DM Interactive\Programming\WPF_C#\Mvvm Example\Mvvm Example\obj\Debug\Mvvm Example.g.resources
+C:\Users\DongMin\Desktop\DM Interactive\Programming\WPF_C#\Mvvm Example\Mvvm Example\obj\Debug\Mvvm_Example.Properties.Resources.resources
+C:\Users\DongMin\Desktop\DM Interactive\Programming\WPF_C#\Mvvm Example\Mvvm Example\obj\Debug\Mvvm Example.csproj.GenerateResource.cache
+C:\Users\DongMin\Desktop\DM Interactive\Programming\WPF_C#\Mvvm Example\Mvvm Example\obj\Debug\Mvvm Example.csproj.CoreCompileInputs.cache
+C:\Users\DongMin\Desktop\DM Interactive\Programming\WPF_C#\Mvvm Example\Mvvm Example\obj\Debug\Mvvm Example.exe
+C:\Users\DongMin\Desktop\DM Interactive\Programming\WPF_C#\Mvvm Example\Mvvm Example\obj\Debug\Mvvm Example.pdb
+C:\Users\DongMin\Desktop\DM Interactive\Programming\WPF_C#\Mvvm Example\Mvvm Example\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\bin\Debug\Mvvm Example.exe.config
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\bin\Debug\Mvvm Example.exe
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\bin\Debug\Mvvm Example.pdb
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\obj\Debug\Mvvm Example.csproj.AssemblyReference.cache
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\obj\Debug\MainWindow.g.cs
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\obj\Debug\App.g.cs
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\obj\Debug\Mvvm Example_MarkupCompile.cache
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\obj\Debug\Mvvm Example_MarkupCompile.lref
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\obj\Debug\MainWindow.baml
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\obj\Debug\Mvvm Example.g.resources
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\obj\Debug\Mvvm_Example.Properties.Resources.resources
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\obj\Debug\Mvvm Example.csproj.GenerateResource.cache
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\obj\Debug\Mvvm Example.csproj.CoreCompileInputs.cache
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\obj\Debug\Mvvm Example.exe
+C:\Users\kimo8\Documents\github\CSharp\Mvvm_Example\Mvvm Example\obj\Debug\Mvvm Example.pdb
