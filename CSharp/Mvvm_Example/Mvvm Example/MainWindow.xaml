@@ -20,6 +20,8 @@
                     <GridViewColumn Header="ISBN" DisplayMemberBinding="{Binding Path=ID}"/>
                     <GridViewColumn Header="제목" DisplayMemberBinding="{Binding Path=Title}"/>
                     <GridViewColumn Header="가격" DisplayMemberBinding="{Binding Path=Price}"/>
+                    <GridViewColumn Header="출판사" DisplayMemberBinding="{Binding Path=Publisher}"/>
+
                 </GridView>
             </ListView.View>
         </ListView>

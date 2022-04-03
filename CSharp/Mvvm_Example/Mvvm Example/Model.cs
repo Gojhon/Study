@@ -28,11 +28,11 @@ namespace Mvvm_Example
         public void GetData()
         {
             //DB에서 데이터 가져옴.
-            Books.Add(new Book { ID = 1, Title = "제프리 리처의 CLR via C#", Price = 50000 });
-            Books.Add(new Book { ID = 2, Title = "찰스 페졸드의 Programming Windows", Price = 52000 });
-            Books.Add(new Book { ID = 3, Title = "스티브 맥코넬의 Code Complete", Price = 48000 });
-            Books.Add(new Book { ID = 4, Title = "천재동민의 프로그래밍의 정석", Price = 98000 });
-            Books.Add(new Book { ID = 5, Title = "천재동민의 나눔코딩", Price = 0 });
+            Books.Add(new Book { ID = 1, Title = "제프리 리처의 CLR via C#", Price = 50000 ,Publisher= "비제이퍼블릭(BJ퍼블릭)" });
+            Books.Add(new Book { ID = 2, Title = "찰스 페졸드의 Programming Windows", Price = 52000, Publisher= "비제이퍼블릭(BJ퍼블릭)" });
+            Books.Add(new Book { ID = 3, Title = "스티브 맥코넬의 Code Complete", Price = 48000 ,Publisher="위키북스"});
+            Books.Add(new Book { ID = 4, Title = "천재동민의 프로그래밍의 정석", Price = 98000 ,Publisher="닷넷오픈채팅방"});
+            Books.Add(new Book { ID = 5, Title = "천재동민의 나눔코딩", Price = 0 ,Publisher= "닷넷오픈채팅방" });
         }
 
         // 2. GetData 후 별도 과정이 필요하면...
@@ -48,5 +48,6 @@ namespace Mvvm_Example
         public int ID { get; set; }
         public string Title { get; set; }
         public int Price { get; set; }
+        public string Publisher { get; set; }
     }
 }
