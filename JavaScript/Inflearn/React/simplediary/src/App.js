@@ -1,8 +1,14 @@
-import { useCallback, useEffect, useReducer, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useReducer,
+  useRef,
+  createContext
+} from "react";
 import "./App.css";
 import DiaryEditor from "./DiaryEditor";
 import DiaryList from "./DiaryList";
-//import Lifecycle from "./Lifecycle";
 
 const reducer = (state, action)=>{
   switch(action.type)
@@ -32,9 +38,10 @@ const reducer = (state, action)=>{
   }
 }
 
-function App() {
+export const DiaryStateContext = React.createContext();
 
-  //const [data,setData] = useState([])
+export const DiaryDispatchContext = React.createContext();
+function App() {
 
   const [data,dispatch] = useReducer(reducer,[])
   const dataId = useRef(0)
@@ -55,7 +62,6 @@ function App() {
 
     });
     
-    setData(initData);
   };
 
   useEffect(()=>{
@@ -67,7 +73,6 @@ function App() {
     data:{ author,
            content,
            emotion,
-           created_date,
            id : dataId.current
           }
         });
@@ -78,24 +83,42 @@ function App() {
 
   const onRemove = useCallback((targetId)=>{
     dispatch({type:"REMOVE",targetId})
-    // console.log(`${targetId}가 삭제 되었습니다.`)
-    // const newDiaryList = data.filter((it)=> it.id!==targetId);
-    // console.log(newDiaryList);
-    // setData(newDiaryList);
+    
   },[]);
 
   const onEdit =useCallback((targetId,newContent) =>{
-    // setData(
-    //   data.map((it)=>it.id === targetId ? {...it,content : newContent} : it)
-    // );
+   
     dispatch({type:"EDIT",targetId,newContent})
   },[]);
+
+  const memoizedDispatches = useMemo(()=>
+  { return {onCreate,onRemove,onEdit}}
+  )
+  const getDiaryAnalysis= useMemo(()=>
+  {
+    const goodCount = data.filter((it=>it.emotion)>=3).length;
+    const badCount = data.length - goodCount;
+    const goodRatio = (goodCount / data.length)* 100;
+    return {goodCount,badCount,goodRatio};
+
+  },[data.length]);
+
+  const {goodCount,badCount,goodRatio} =getDiaryAnalysis;
   return (
+    <DiaryStateContext.Provider value = {data}>
+    <DiaryDispatchContext.Provider value={memoizedDispatches}>
     <div className="App">
       <h2>일기장</h2>
-      <DiaryEditor onCreate={onCreate} />
-      <DiaryList onEdit = {onEdit} onRemove={onRemove} DiaryList={data} />
+      <DiaryEditor  />
+      <div>전체 일기 : {data.length}</div>
+      <div>기분 좋은 일기 개수 : {goodCount}</div>
+      <div>기분 나쁜 일기 개수 : {badCount}</div>
+      <div>기분 좋은 일기 비율 : {goodRatio}</div>
+      
+      <DiaryList />
     </div>
+    </DiaryDispatchContext.Provider>
+    </DiaryStateContext.Provider>
   );
 }
 
