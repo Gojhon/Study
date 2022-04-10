@@ -4,6 +4,7 @@ namespace Sample1
 {
     class Program
     {
+        //https://tyeom.github.io/ 에 있는 내용을 연습삼아 작성하였습니다.
         static void Main(string[] args)
         {
             int num1 = 1;
