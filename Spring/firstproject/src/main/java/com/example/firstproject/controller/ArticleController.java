@@ -6,7 +6,9 @@ import com.example.firstproject.repository.ArticleRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -22,7 +24,7 @@ public class ArticleController {
     }
 
     @PostMapping("/articles/create")
-    public String createArticle(ArticleForm form) {
+    public String createArticle(ArticleForm form ,Model model) {
         log.info(form.toString());    // println() 을 로깅으로 대체!
 
         Article article = form.toEntity();
@@ -32,5 +34,17 @@ public class ArticleController {
         log.info(saved.toString());   // println() 을 로깅으로 대체!
 
         return "";
+    }
+    
+    @GetMapping("/articles/{id}")
+    public String show(@PathVariable Long id , Model model)
+    {
+    	log.info("id : "+id);
+    	
+    	Article articleEntity = articleRepository.findById(id).orElse(null);
+    	
+        model.addAttribute("article", articleEntity);
+
+    	return  "articles/show";
     }
 }
