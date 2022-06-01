@@ -4,6 +4,10 @@ import com.example.firstproject.dto.ArticleForm;
 import com.example.firstproject.entity.Article;
 import com.example.firstproject.repository.ArticleRepository;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,5 +50,17 @@ public class ArticleController {
         model.addAttribute("article", articleEntity);
 
     	return  "articles/show";
+    }
+    
+    @GetMapping("/articles")
+    public String index(Model model) {
+        // 1: 모든 Article을 가져온다!
+        List<Article> articleEntityList = articleRepository.findAll();
+
+        // 2: 가져온 Article 묶음을 뷰로 전달!
+        model.addAttribute("articleList", articleEntityList);
+
+        // 3: 뷰 페이지를 설정!
+        return "articles/index";
     }
 }
