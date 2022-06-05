@@ -37,7 +37,9 @@ public class ArticleController {
         Article saved = articleRepository.save(article);
         log.info(saved.toString());   // println() 을 로깅으로 대체!
 
-        return "";
+        return "redirect:/articles/" + saved.getId();
+
+
     }
     
     @GetMapping("/articles/{id}")
