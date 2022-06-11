@@ -75,4 +75,18 @@ public class ArticleController {
 
     	return "articles/edit";
     }
+    
+    @PostMapping("/articles/update")
+    public String update(ArticleForm form)
+    {
+    	Article articleEntity = form.toEntity();
+    	
+    	Article target = articleRepository.findById(articleEntity.getId()).orElse(null);
+    	if( target !=null)
+    	{
+    		articleRepository.save(articleEntity);
+    	}
+    	log.info(articleEntity.toString());
+    	return "redirect:/articles/"+articleEntity.getId();
+    }
 }
