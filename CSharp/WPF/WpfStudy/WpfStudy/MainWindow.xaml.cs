@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfStudy.Models;
 
 namespace WpfStudy
 {
@@ -27,8 +28,27 @@ namespace WpfStudy
 
         private void btnTest1_Click(object sender, RoutedEventArgs e)
         {
+            List<User> myList1 = new List<User>();
+
             labeltest1.Content = "내용 변경 완료";
-            MessageBox.Show(TextBox1.Text);
+            //MessageBox.Show(TextBox1.Text);
+
+            User userA = new User();
+            userA.UserImg = @"C:\Users\kimo8\Documents\GitHub\Study\CSharp\WPF\WpfStudy\WpfStudy\image.png";
+            userA.Name = "Noah";
+            userA.UserAge = 15;
+
+            User userB = new User();
+            userB.UserImg = @"C:\Users\kimo8\Documents\GitHub\Study\CSharp\WPF\WpfStudy\WpfStudy\image.png";
+            userB.Name = "Liam";
+            userB.UserAge = 15;
+
+            myList1.Add(userA);
+            myList1.Add(userB);
+
+            listView1.ItemsSource = myList1;
+
+
         }
     }
 }

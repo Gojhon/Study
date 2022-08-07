@@ -14,6 +14,24 @@
         <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="59,230,0,0" VerticalAlignment="Top" GroupName=""/>
         <RadioButton Content="RadioButton" HorizontalAlignment="Left" Margin="59,250,0,0" VerticalAlignment="Top" GroupName=""/>
         <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Margin="59,283,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <ListView x:Name="listView1" Margin="223,115,102,133" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="이미지" Width="300">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                <Image Width="60" Height="60" Source="{Binding UserImg}"/>
+                                    <Button Height="20"></Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="이름" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="나이" DisplayMemberBinding="{Binding UserAge}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>
