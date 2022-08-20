@@ -1,8 +1,11 @@
 package com.example.firstproject.controller;
 
 import com.example.firstproject.dto.ArticleForm;
+import com.example.firstproject.dto.CommentDto;
 import com.example.firstproject.entity.Article;
 import com.example.firstproject.repository.ArticleRepository;
+import com.example.firstproject.service.CommentService;
+
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
@@ -23,6 +26,9 @@ public class ArticleController {
     @Autowired
     private ArticleRepository articleRepository;
 
+    @Autowired
+    private CommentService commentService;
+ 
     @GetMapping("/articles/new")
     public String newArticleForm() {
         return "articles/new";
@@ -50,7 +56,9 @@ public class ArticleController {
     	
     	Article articleEntity = articleRepository.findById(id).orElse(null);
     	
+    	List<CommentDto> commentDtos = commentService.comments(id);
         model.addAttribute("article", articleEntity);
+        model.addAttribute("commentDtos", commentDtos);
 
     	return  "articles/show";
     }
