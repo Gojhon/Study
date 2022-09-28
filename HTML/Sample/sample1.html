@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <section class="listup">
+    <button onclick="changed_data()">test </button>
+    <table class="list">
+        <thead>
+            <tr>
+                <th>순번</th>
+                <th>이름</td>
+                <th>타이틀</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+  </section>
+  
+  <script>
+    function changed_data()
+    {
+    const $list = $('.list tbody');
+    const listArray = [{
+        id: 1,
+        name : 'one',
+        title : '예시1'
+    },{
+        id: 2,
+        name : 'two',
+        title : '예시2'
+    }];
+  
+    listArray.map( (list,idx) => {
+        return $('<tr class="item">'+
+            '<td class="id">'+list.id+'</td>'+
+            '<td class="name">'+list.name+'</td>'+
+            '<td class="text">'+list.title+'</td>'+
+        '</tr>').appendTo($list)
+    });
+  }
+  </script>
+</body>
+</html>
+
