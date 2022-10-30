@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.firstproject.annotation.RunningTime;
 import com.example.firstproject.dto.CommentDto;
 import com.example.firstproject.service.CommentService;
 
@@ -46,7 +47,7 @@ public class CommentApiController {
     	return ResponseEntity.status(HttpStatus.OK).body(updatedDto);
     }
     
-    
+    @RunningTime
     @DeleteMapping("/api/comments/{id}")
     public ResponseEntity<CommentDto> delete(@PathVariable Long id)
     {

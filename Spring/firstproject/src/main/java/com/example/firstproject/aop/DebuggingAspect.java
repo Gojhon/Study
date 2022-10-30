@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class DebuggingAspect {
 	
-    @Pointcut("execution(* com.example.firstproject.service.CommentService.*(..))")
+    @Pointcut("execution(* com.example.firstproject.api.*.*(..))")
 	private void cut() {
 		
 	}
