@@ -6,13 +6,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.solidit.myhome.model.Board;
 import com.solidit.myhome.repository.BoardRepository;
+import com.solidit.myhome.validator.BoardValidator;
 
 import jakarta.validation.Valid;
 
@@ -24,6 +24,8 @@ public class BoardController {
 	@Autowired
 	private BoardRepository boardRepository;
 	
+	@Autowired
+	private BoardValidator boardValidator;
 	@GetMapping("/list")
     public String list(Model model) {
 		List<Board> boards = boardRepository.findAll();
@@ -48,6 +50,7 @@ public class BoardController {
 	@PostMapping("/form")
 	public String greetingSubmit(@Valid Board board,BindingResult bindingResult)
 	{
+		boardValidator.validate(board, bindingResult);
 		if(bindingResult.hasErrors())
 		{
 			return "board/form";
