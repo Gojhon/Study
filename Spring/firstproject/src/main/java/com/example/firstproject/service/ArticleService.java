@@ -70,7 +70,7 @@ public class ArticleService {
 		return target;
 	}
 	
-	  @Transactional
+	 @Transactional
 	    public List<Article> createArticles(List<ArticleForm> dtos) {
 	        // dto 묶음을 entity 묶음으로 변환
 	        List<Article> articleList = dtos.stream()
