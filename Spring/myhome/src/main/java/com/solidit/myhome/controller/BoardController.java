@@ -18,7 +18,7 @@ import com.solidit.myhome.model.Board;
 import com.solidit.myhome.repository.BoardRepository;
 import com.solidit.myhome.validator.BoardValidator;
 
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 
 
 @Controller
