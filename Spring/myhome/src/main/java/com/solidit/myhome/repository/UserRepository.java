@@ -9,6 +9,9 @@ import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    User findByUsername(String username);
+        @EntityGraph(attributePaths = { "boards" })
+        List<User> findAll();
 
+        User findByUsername(String username);
+    
 }
