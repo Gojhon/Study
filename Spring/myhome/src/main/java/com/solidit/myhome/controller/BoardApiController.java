@@ -3,6 +3,7 @@ package com.solidit.myhome.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -71,8 +72,9 @@ class BoardApiController {
       });
   }
 
+  @Secured("ROLE_ADMIN")
   @DeleteMapping("/boards/{id}")
   void deleteBoard(@PathVariable Long id) {
-    repository.deleteById(id);
+      repository.deleteById(id);
   }
 }
