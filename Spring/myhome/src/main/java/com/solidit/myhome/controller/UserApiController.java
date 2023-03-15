@@ -1,5 +1,6 @@
 package com.solidit.myhome.controller;
 
+import com.solidit.myhome.mapper.UserMapper;
 import com.solidit.myhome.model.Board;
 import com.solidit.myhome.model.QUser;
 import com.solidit.myhome.model.User;
@@ -19,8 +20,11 @@ public class UserApiController {
 	@Autowired
     private UserRepository repository;
 
-	 @GetMapping("/users")
-	 Iterable<User> all(@RequestParam(required = false) String method, @RequestParam(required = false) String text)
+	@Autowired
+	private UserMapper userMapper;
+	
+	@GetMapping("/users")
+	Iterable<User> all(@RequestParam(required = false) String method, @RequestParam(required = false) String text)
 	 	{	
 		  Iterable<User> users = null;
 		  if("query".equals(method)) {
@@ -36,6 +40,9 @@ public class UserApiController {
 	        } else if("jdbc".equals(method)) {
 	            users = repository.findByUsernameJdbc(text);
 	        } 
+	        else if ("mybatis".equals(method)) {
+            users = userMapper.getUsers(text);
+	        }
 	        else {
 	            users = repository.findAll();
 	        }

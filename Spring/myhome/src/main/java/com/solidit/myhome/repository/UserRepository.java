@@ -9,14 +9,14 @@ import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import java.util.List;
 
 public interface UserRepository  extends JpaRepository<User, Long>, QuerydslPredicateExecutor<User> ,CustomizedUserRepository  {
-        @EntityGraph(attributePaths = { "boards" })
-        List<User> findAll();
+	@EntityGraph(attributePaths = { "boards" })
+    List<User> findAll();
 
-        User findByUsername(String username);
-        
-        @Query("select u from User u where u.username like %?1%")
-        List<User> findByUsernameQuery(String username);
-        
-        @Query(value = "select * from User u where u.username like %?1%", nativeQuery = true)
-        List<User> findByUsernameNativeQuery(String username);
+    User findByUsername(String username);
+
+    @Query("select u from User u where u.username like %?1%")
+    List<User> findByUsernameQuery(String username);
+
+    @Query(value = "select * from User u where u.username like %?1%", nativeQuery = true)
+    List<User> findByUsernameNativeQuery(String username);
 }
